@@ -5806,6 +5806,27 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+html, body, html *, body * {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.navbar, .nav-container, .nav-right-group, .nav-menu, .nav-cta-container {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.site-footer, .footer-container, .footer-top, .footer-col {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.footer-brand-desc, .footer-heading, .footer-nav a, .footer-contact,
+.footer-copyright, .footer-legal a {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
