@@ -781,58 +781,265 @@
 </script>
   
   <main>
-    <section id="hero" class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim">
-  <!-- Background image layer -->
-  <div class="index-hero-bg-wrap">
-    <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Abstract dark cinematic signal-wave environment for a tech startup called PrePeak. Near-black background (#070A12) with luminous electric cyan and violet glowing chart lines, signal waves, and faint grid structures. Motion-inspired blur streaks suggesting speed and data momentum. Subtle radial glows in cyan and violet. No people, no text, no UI elements — pure abstract data visualization atmosphere." width="1440" height="900" src="/assets/site-index-hero-image-1.webp" alt="רקע אמנותי של גלי אות וקווי נתונים זוהרים בצבעי ציאן וסגול על רקע כמעט שחור" class="index-hero-bg-img">
+    <section id="hero" class="pp-hero" data-layout-spec="בית-hero">
+  <!-- Animated grid background -->
+  <div class="pp-hero__grid" aria-hidden="true"></div>
+  <!-- Energy pulse lines -->
+  <div class="pp-hero__pulses" aria-hidden="true">
+    <span class="pp-hero__pulse pp-hero__pulse--1"></span>
+    <span class="pp-hero__pulse pp-hero__pulse--2"></span>
+    <span class="pp-hero__pulse pp-hero__pulse--3"></span>
   </div>
+  <!-- Radial glow -->
+  <div class="pp-hero__glow" aria-hidden="true"></div>
 
-  <!-- Scrim overlay for text legibility -->
-  <div class="index-hero-scrim" aria-hidden="true"></div>
+  <div class="pp-hero__inner">
+    <!-- Status badge -->
+    <div class="pp-hero__badge">
+      <span class="pp-hero__badge-dot" aria-hidden="true"></span>
+      <span>AI Power Infrastructure · B2B</span>
+    </div>
 
-  <!-- Decorative grid texture overlay -->
-  <div class="index-hero-grid-texture" aria-hidden="true"></div>
+    <!-- Headline -->
+    <h1 class="pp-hero__h1">
+      Power Instability<br>
+      <span class="pp-hero__h1-accent">Kills AI Infrastructure.</span><br>
+      PrePeak Stops It.
+    </h1>
 
-  <!-- Main content overlay -->
-  <div class="index-hero-content-wrap">
-    <div class="index-hero-content">
+    <!-- Subheadline -->
+    <p class="pp-hero__sub">
+      Real-time spike prediction and intelligent energy buffering —<br>
+      before the load hits your hardware.
+    </p>
 
-      <!-- Label badge -->
-      <div class="index-hero-badge">
-        <span class="index-hero-badge-dot" aria-hidden="true"></span>
-        <span>AI Power Stability Platform</span>
-      </div>
+    <!-- CTA -->
+    <div class="pp-hero__ctas">
+      <a href="#contact" class="pp-hero__btn-primary">Request a Demo</a>
+      <a href="#how-it-works" class="pp-hero__btn-ghost">How It Works <span aria-hidden="true">↓</span></a>
+    </div>
 
-      <!-- H1 headline -->
-      <h1 class="index-hero-h1">Power Stability
-        for the AI Era.</h1>
-
-      <!-- Supporting paragraph -->
-      <p class="index-hero-body">AI data centers face unpredictable power spikes that cause costly downtime and hardware failures. PrePeak detects and neutralizes them before they happen.</p>
-
-      <!-- H3 reinforcement line -->
-      <h3 class="index-hero-h3">Predict. Buffer. Stabilize.</h3>
-
-      <!-- CTA buttons -->
-      <div class="index-hero-ctas">
-        <a href="#contact" class="index-hero-btn-primary">Request a Demo</a>
-        <a href="#features" class="index-hero-btn-secondary">See How It Works <span aria-hidden="true">←</span></a>
-      </div>
-
+    <!-- Proof bar -->
+    <div class="pp-hero__proof">
+      <span class="pp-hero__proof-item"><span class="pp-hero__proof-val">&lt;10ms</span> Response Time</span>
+      <span class="pp-hero__proof-sep" aria-hidden="true">|</span>
+      <span class="pp-hero__proof-item"><span class="pp-hero__proof-val">$500K+</span> Downtime Prevented / Event</span>
+      <span class="pp-hero__proof-sep" aria-hidden="true">|</span>
+      <span class="pp-hero__proof-item"><span class="pp-hero__proof-val">30%</span> Capacity Unlocked</span>
     </div>
   </div>
 
-  <!-- Bottom divider: angled clip with cyan trace -->
-  <div class="index-hero-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Main dark fill filling the bottom -->
-      <path d="M0,90 L0,52 L1440,18 L1440,90 Z" fill="#070A12"></path>
-      <!-- Thin electric cyan trace line -->
-      <path d="M0,52 L1440,18" stroke="#00FF94" stroke-width="1.2" fill="#070A12" opacity="0.55"></path>
-    </svg>
-  </div>
-
+  <!-- Bottom edge line -->
+  <div class="pp-hero__edge" aria-hidden="true"></div>
 </section>
+
+<style>
+/* ===================== HERO ===================== */
+.pp-hero {
+  position: relative;
+  min-height: 100vh;
+  background: #03050A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 24px;
+}
+
+/* Grid background */
+.pp-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,148,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,148,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: pp-grid-drift 20s linear infinite;
+}
+@keyframes pp-grid-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+/* Radial glow */
+.pp-hero__glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(0,212,255,0.09) 0%, rgba(0,255,148,0.05) 40%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Energy pulse lines */
+.pp-hero__pulses {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pp-hero__pulse {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,148,0.5), rgba(0,212,255,0.5), transparent);
+  animation: pp-pulse-scan 6s ease-in-out infinite;
+  opacity: 0;
+}
+.pp-hero__pulse--1 { top: 25%; animation-delay: 0s; }
+.pp-hero__pulse--2 { top: 55%; animation-delay: 2s; }
+.pp-hero__pulse--3 { top: 78%; animation-delay: 4s; }
+@keyframes pp-pulse-scan {
+  0%   { opacity: 0; transform: scaleX(0); transform-origin: left; }
+  30%  { opacity: 1; transform: scaleX(1); }
+  70%  { opacity: 1; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(1); }
+}
+
+/* Inner content */
+.pp-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 120px 0 80px;
+}
+
+/* Badge */
+.pp-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,255,148,0.06);
+  border: 1px solid rgba(0,255,148,0.2);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00FF94;
+}
+.pp-hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00FF94;
+  box-shadow: 0 0 6px #00FF94;
+  animation: pp-blink 2s ease-in-out infinite;
+}
+@keyframes pp-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* H1 */
+.pp-hero__h1 {
+  font-size: clamp(36px, 5.5vw, 68px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0;
+}
+.pp-hero__h1-accent {
+  background: linear-gradient(90deg, #00FF94, #00D4FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subheadline */
+.pp-hero__sub {
+  font-size: clamp(15px, 1.8vw, 19px);
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+  max-width: 580px;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* CTA buttons */
+.pp-hero__ctas {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pp-hero__btn-primary {
+  background: linear-gradient(135deg, #00FF94, #00D4FF);
+  color: #03050A;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.pp-hero__btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+.pp-hero__btn-ghost {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 14px 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  transition: border-color 0.2s, color 0.2s;
+  letter-spacing: 0.02em;
+}
+.pp-hero__btn-ghost:hover { border-color: rgba(0,255,148,0.4); color: #00FF94; }
+
+/* Proof bar */
+.pp-hero__proof {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 8px;
+}
+.pp-hero__proof-item {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pp-hero__proof-val {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+}
+.pp-hero__proof-sep {
+  color: rgba(255,255,255,0.15);
+  font-size: 18px;
+}
+
+/* Bottom edge */
+.pp-hero__edge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,148,0.3), rgba(0,212,255,0.3), transparent);
+}
+
+@media (max-width: 768px) {
+  .pp-hero__proof-sep { display: none; }
+  .pp-hero__proof { flex-direction: column; gap: 10px; }
+}
+</style>
 
 <section class="pp-solution" aria-labelledby="pp-solution-headline">
 
