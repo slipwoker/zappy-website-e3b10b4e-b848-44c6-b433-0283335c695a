@@ -6358,6 +6358,34 @@ body {
   outline-offset: 3px;
 }
 
+html {
+  direction: rtl;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+.navbar {
+  direction: rtl;
+}
+
+.index-hero-section .index-hero-content {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+.index-hero-section .index-hero-ctas {
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+}
+
+.index-hero-section .index-hero-badge {
+  direction: rtl !important;
+  justify-content: flex-start !important;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
