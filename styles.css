@@ -5924,6 +5924,440 @@ body {
   background: #00d47a !important;
 }
 
+/* AI-generated section */
+/* =============================================
+   PP SOLUTION SECTION — PrePeak
+   ============================================= */
+
+.pp-solution {
+  position: relative;
+  background-color: #070A12;
+  padding: 100px 20px 80px;
+  font-family: system-ui, sans-serif;
+  direction: rtl;
+  text-align: right;
+  overflow: hidden;
+  color: var(--text-color, #FFFFFF);
+}
+
+/* --- Background Decorations --- */
+.pp-solution__bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pp-solution__bg-glow--cyan {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(0, 255, 148, 0.10) 0%, transparent 70%);
+}
+
+.pp-solution__bg-glow--blue {
+  width: 450px;
+  height: 450px;
+  bottom: -80px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.09) 0%, transparent 70%);
+}
+
+.pp-solution__bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 255, 148, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 148, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Container --- */
+.pp-solution__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.pp-solution__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.pp-solution__eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary-color, #00FF94);
+  background: rgba(0, 255, 148, 0.08);
+  border: 1px solid rgba(0, 255, 148, 0.25);
+  border-radius: 100px;
+  padding: 6px 20px;
+  margin-bottom: 22px;
+}
+
+.pp-solution__headline {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
+}
+
+.pp-solution__subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-secondary-color, #A0A0A0);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* --- Steps Grid --- */
+.pp-solution__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-bottom: 64px;
+  position: relative;
+}
+
+/* Horizontal connector line between steps */
+.pp-solution__steps::before {
+  content: '';
+  position: absolute;
+  top: 52px;
+  right: calc(12.5% + 24px);
+  left: calc(12.5% + 24px);
+  height: 2px;
+  background: linear-gradient(90deg,
+    rgba(0, 255, 148, 0.15) 0%,
+    rgba(0, 212, 255, 0.3) 50%,
+    rgba(0, 255, 148, 0.15) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- Individual Step Card --- */
+.pp-solution__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 16px 32px;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+.pp-solution__step:hover {
+  transform: translateY(-4px);
+}
+
+/* Step Number Badge */
+.pp-solution__step-number {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--primary-color, #00FF94);
+  margin-bottom: 12px;
+  opacity: 0.6;
+  position: relative;
+  z-index: 1;
+}
+
+.pp-solution__step--blue .pp-solution__step-number {
+  color: var(--secondary-color, #00D4FF);
+}
+
+/* Icon Wrapper */
+.pp-solution__step-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 148, 0.06);
+  border: 1.5px solid rgba(0, 255, 148, 0.25);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pp-solution__step--blue .pp-solution__step-icon-wrap {
+  background: rgba(0, 212, 255, 0.06);
+  border-color: rgba(0, 212, 255, 0.25);
+}
+
+.pp-solution__step:hover .pp-solution__step-icon-wrap {
+  background: rgba(0, 255, 148, 0.12);
+  border-color: rgba(0, 255, 148, 0.55);
+  box-shadow: 0 0 28px rgba(0, 255, 148, 0.18);
+}
+
+.pp-solution__step--blue:hover .pp-solution__step-icon-wrap {
+  background: rgba(0, 212, 255, 0.12);
+  border-color: rgba(0, 212, 255, 0.55);
+  box-shadow: 0 0 28px rgba(0, 212, 255, 0.18);
+}
+
+/* Icon SVG */
+.pp-solution__step-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--primary-color, #00FF94);
+}
+
+.pp-solution__step--blue .pp-solution__step-icon {
+  color: var(--secondary-color, #00D4FF);
+}
+
+/* Step Content */
+.pp-solution__step-content {
+  flex: 1;
+}
+
+.pp-solution__step-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.pp-solution__step-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color, #A0A0A0);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Connector dot (hidden on desktop, used on mobile) */
+.pp-solution__step-connector {
+  display: none;
+}
+
+/* --- Stats Bar --- */
+.pp-solution__stats {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.pp-solution__stats::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(0, 255, 148, 0.07) 0%,
+    rgba(0, 212, 255, 0.05) 50%,
+    rgba(0, 255, 148, 0.04) 100%
+  );
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.pp-solution__stats-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgba(0, 255, 148, 0.18);
+  border-radius: 16px;
+  padding: 40px 32px;
+  gap: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Individual Stat */
+.pp-solution__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+.pp-solution__stat-value {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--primary-color, #00FF94) 0%, #1CFFA0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.pp-solution__stat-value--blue {
+  background: linear-gradient(135deg, var(--secondary-color, #00D4FF) 0%, #5AE8FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pp-solution__stat-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary-color, #A0A0A0);
+  line-height: 1.5;
+  max-width: 160px;
+  text-align: center;
+}
+
+/* Stat Dividers */
+.pp-solution__stat-divider {
+  width: 1px;
+  height: 64px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 255, 148, 0.25) 30%,
+    rgba(0, 212, 255, 0.25) 70%,
+    transparent 100%
+  );
+  flex-shrink: 0;
+}
+
+/* =============================================
+   RESPONSIVE — TABLET (≤ 900px)
+   ============================================= */
+@media (max-width: 900px) {
+  .pp-solution {
+    padding: 80px 20px 60px;
+  }
+
+  .pp-solution__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .pp-solution__steps::before {
+    display: none;
+  }
+
+  .pp-solution__step {
+    padding: 24px 20px 28px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 255, 148, 0.1);
+    border-radius: 14px;
+    margin: 6px;
+  }
+
+  .pp-solution__step--blue {
+    border-color: rgba(0, 212, 255, 0.1);
+  }
+
+  .pp-solution__stats-inner {
+    padding: 32px 20px;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — MOBILE (≤ 600px)
+   ============================================= */
+@media (max-width: 600px) {
+  .pp-solution {
+    padding: 60px 16px 48px;
+  }
+
+  .pp-solution__header {
+    margin-bottom: 48px;
+  }
+
+  .pp-solution__steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pp-solution__step {
+    flex-direction: row;
+    text-align: right;
+    align-items: flex-start;
+    padding: 20px 18px;
+    gap: 16px;
+  }
+
+  .pp-solution__step-number {
+    display: none;
+  }
+
+  .pp-solution__step-icon-wrap {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .pp-solution__step-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .pp-solution__step-content {
+    padding-top: 2px;
+  }
+
+  .pp-solution__step-title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .pp-solution__step-desc {
+    font-size: 0.875rem;
+  }
+
+  /* Stats stacked on mobile */
+  .pp-solution__stats-inner {
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 28px;
+  }
+
+  .pp-solution__stat-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 255, 148, 0.25) 30%,
+      rgba(0, 212, 255, 0.25) 70%,
+      transparent 100%
+    );
+  }
+
+  .pp-solution__stat-value {
+    font-size: 2.2rem;
+  }
+
+  .pp-solution__stat-label {
+    font-size: 0.85rem;
+    max-width: 200px;
+  }
+}
+
+/* =============================================
+   FOCUS / ACCESSIBILITY
+   ============================================= */
+.pp-solution__step:focus-within .pp-solution__step-icon-wrap {
+  outline: 2px solid var(--primary-color, #00FF94);
+  outline-offset: 3px;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
@@ -6092,6 +6526,440 @@ body {
   }
 }
 /* ========== END ORPHANED_ZOOM_IMG_FIX ========== */
+
+
+/* ========== GRID RESPONSIVE FIX (zappy-grid-mobile-fix) ========== */
+/* Ensures grids with explicit columns use CSS variable and are responsive on mobile */
+
+/* DESKTOP: Explicit column grids use CSS variable for grid-template-columns */
+/* The deployment process ensures --zappy-grid-cols is always set in inline styles */
+[data-zappy-explicit-columns="true"] {
+  display: grid !important;
+  grid-template-columns: var(--zappy-grid-cols, repeat(2, minmax(0, 1fr))) !important;
+}
+/* Carousel mode overrides grid display to allow flex-based track layout */
+.zappy-carousel-mode,
+[data-zappy-display-mode="carousel"] {
+  display: block !important;
+}
+
+/* ZOOM WRAPPER: Ensure overflow:hidden and position:relative for crop zoom effect */
+/* The wrapper clips the oversized image to create the zoom/crop effect */
+/* position:relative is needed so absolutely positioned images stay within the wrapper */
+[data-zappy-zoom-wrapper="true"] {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Prevent inserted elements from exceeding their container width.
+   max-width uses no !important so inline styles can set a specific constraint. */
+.zappy-inserted-element {
+  max-width: 100%;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  /* Auto-grid (AI-generated) grids - force single column on mobile */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"],
+  [data-zappy-auto-grid="true"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Grid children: override min-width:auto so children with fixed-width
+     content (e.g. zoom wrappers with width:448px!important) can shrink
+     to fit the 1fr column instead of overflowing the grid container. */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > *,
+  [data-zappy-auto-grid="true"] > *,
+  [data-zappy-explicit-columns="true"] > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  /* Featured grids - force single column on mobile */
+  .featured-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Neutralize centering transforms on mobile */
+  [data-zappy-center-transform] {
+    transform: none !important;
+  }
+  
+  /* Media-only grid items - constrain height on mobile */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > .zappy-grid-item-media-only,
+  [data-zappy-auto-grid="true"] > .zappy-grid-item-media-only {
+    height: auto !important;
+    max-height: 300px !important;
+  }
+  
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > .zappy-grid-item-media-only img,
+  [data-zappy-auto-grid="true"] > .zappy-grid-item-media-only img {
+    height: auto !important;
+    max-height: 300px !important;
+  }
+  
+  /* Full-width mode zoom wrappers - ensure image is visible (not collapsed) */
+  [data-zappy-zoom-wrapper-width-mode="full"] img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 300px !important;
+    left: auto !important;
+    top: auto !important;
+    object-fit: cover !important;
+  }
+  
+  /* MOBILE: Explicit column grids - force single column on mobile */
+  [data-zappy-explicit-columns="true"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Inline grid with fixed pixel columns - make responsive */
+  .zappy-inline-grid-active.zappy-preserve-css-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* AI-generated section grids with common naming patterns */
+  /* These often have fixed pixel column widths that don't adapt to mobile */
+  [class*="-grid"]:not([data-zappy-auto-grid]):not(.zappy-preserve-css-grid):not([data-zappy-explicit-columns="true"]) {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Reset any column/row spanning items on mobile - they cause overflow */
+  /* Gallery grids often have -large items that span multiple columns */
+  [class*="-grid"] > [class*="-large"],
+  [class*="-grid"] > [class*="-item-large"],
+  [class*="-grid"] > [style*="grid-column: span"],
+  [class*="-grid"] > [style*="grid-row: span"] {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+  
+  /* Common AI-generated visual/frame containers that may overflow */
+  [class*="-visual"],
+  [class*="-frame"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  
+  /* CRITICAL: Constrain zoom wrappers on mobile - they often have fixed pixel widths */
+  [data-zappy-zoom-wrapper="true"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+  }
+  
+  /* Fix zoom wrapper images on mobile - make responsive */
+  [data-zappy-zoom-wrapper="true"] img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  
+  /* Carousel: ensure block display on mobile */
+  .zappy-carousel-mode,
+  [data-zappy-display-mode="carousel"] {
+    display: block !important;
+  }
+  /* JS-initialized carousel: constrain wrapper on mobile */
+  .zappy-carousel-js-init .zappy-carousel-container-wrapper {
+    max-width: calc(100% - 20px) !important;
+  }
+  .zappy-carousel-js-init .zappy-carousel-item {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  /* CSS-only fallback: if JS didn't initialize, stack items vertically */
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-container-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-track {
+    flex-direction: column !important;
+    transform: none !important;
+    gap: 1.5rem !important;
+  }
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) > :not(style):not(script):not(.zappy-carousel-btn):not(.zappy-carousel-dots):not(.zappy-carousel-container-wrapper) {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-btn,
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-dots {
+    display: none !important;
+  }
+  /* Carousel items: fix zoom wrapper padding creating excess spacing */
+  .zappy-carousel-item [data-zappy-zoom-wrapper="true"],
+  .zappy-carousel-mode > div [data-zappy-zoom-wrapper="true"] {
+    padding-bottom: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+  /* Carousel buttons: position inside the card area on mobile */
+  .zappy-carousel-js-init > .zappy-carousel-btn {
+    left: 4px !important;
+    right: auto !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 16px !important;
+    background: rgba(255,255,255,0.9) !important;
+  }
+  .zappy-carousel-js-init > .zappy-carousel-btn.zappy-carousel-right {
+    left: auto !important;
+    right: 4px !important;
+  }
+  
+  /* ========== MAIN PADDING FIX ========== */
+  /* Fix double-padding from old V2 mobile CSS that applied padding to both main and sections */
+  /* Exclude ecommerce-page which needs its own horizontal padding for proper mobile layout */
+  main:not(.ecommerce-page) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Hero sections need flex-column on mobile for proper stacking */
+  section[class*="hero"],
+  .home-Hero-section {
+    flex-direction: column !important;
+  }
+  
+  /* Hero sections need extra padding-top to clear the sticky navbar */
+  /* The navbar is ~70px tall, so hero needs at least 100px padding-top */
+  /* IMPORTANT: Use section tag to avoid matching child elements like buttons that contain "-hero-section" in their BEM class */
+  section[class*="-hero-section"]:first-of-type,
+  main > section:first-child {
+    padding-top: 100px !important;
+  }
+  
+  /* ========== HERO CONTAINER FULL-WIDTH (FULLSCREEN HEROES ONLY) ========== */
+  /* Only strip container padding/width for heroes with actual background images.
+     Text-only and side-by-side hero sections on inner pages need normal padding. */
+  .hero-container,
+  /* V2 generation-time fullscreen heroes */
+  section[data-hero-type="fullscreen-scrim"] > .container,
+  section[data-hero-type="fullscreen-card"] > .container,
+  /* Editor-applied background images on hero sections */
+  section[class*="hero"][data-zappy-bg-type="image"] > .container,
+  section[class*="hero"][data-zappy-bg-type="video"] > .container,
+  /* V1 fallback: hero sections with known bg structures */
+  section[class*="hero"]:has(.hero-bg-container) > .container,
+  section[class*="hero"]:has([data-hero-bg]) > .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* ========== HERO WIDTH FIX ========== */
+  /* Remove nested horizontal padding for fullscreen-type heroes only */
+  .home-Hero-section .hero-container,
+  .home-Hero-section .hero-content,
+  .home-Hero-section .hero-metrics,
+  .home-Hero-section .hero-image-column,
+  .home-Hero-section .hero-image-frame,
+  .home-Hero-section .container,
+  .home-Hero-section .wrapper,
+  /* V2 fullscreen heroes */
+  section[data-hero-type="fullscreen-scrim"] .hero-container,
+  section[data-hero-type="fullscreen-scrim"] .hero-content,
+  section[data-hero-type="fullscreen-scrim"] .container,
+  section[data-hero-type="fullscreen-card"] .hero-container,
+  section[data-hero-type="fullscreen-card"] .hero-content,
+  section[data-hero-type="fullscreen-card"] .container,
+  /* Editor-applied background images on hero sections */
+  section[class*="hero"][data-zappy-bg-type="image"] .hero-container,
+  section[class*="hero"][data-zappy-bg-type="image"] .hero-content,
+  section[class*="hero"][data-zappy-bg-type="image"] .container,
+  section[class*="hero"][data-zappy-bg-type="video"] .hero-container,
+  section[class*="hero"][data-zappy-bg-type="video"] .hero-content,
+  section[class*="hero"][data-zappy-bg-type="video"] .container,
+  /* V1 fallback: hero sections with known bg structures */
+  section[class*="hero"]:has(.hero-bg-container) .hero-container,
+  section[class*="hero"]:has(.hero-bg-container) .hero-content,
+  section[class*="hero"]:has(.hero-bg-container) .container,
+  section[class*="hero"]:has([data-hero-bg]) .hero-container,
+  section[class*="hero"]:has([data-hero-bg]) .hero-content,
+  section[class*="hero"]:has([data-hero-bg]) .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
+  }
+  
+  /* ========== HERO VERTICAL SPACING FIX ========== */
+  .home-Hero-section .hero-content,
+  .home-Hero-section .hero-container,
+  .home-Hero-section .hero-image-column {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  
+  .hero-cta-row {
+    padding: 8px 0 !important;
+    margin: 8px 0 12px !important;
+  }
+  
+  .hero-content {
+    gap: 12px !important;
+  }
+  
+  .hero-metrics {
+    gap: 10px !important;
+  }
+  
+  .metric-card {
+    padding: 12px !important;
+  }
+  
+  .hero-container {
+    gap: 16px !important;
+  }
+
+  /* ========== GRID OVERFLOW FIX ========== */
+  /* CSS Grid items default to min-width:auto, preventing them from shrinking
+     below their content's intrinsic size. Fixed-width zoom wrappers or large
+     images inside grid items can force the column wider than the viewport. */
+  .hero-container > * {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Zappy-inserted image elements with fixed-width zoom wrappers must
+     respect the parent container width on mobile */
+  .zappy-inserted-element,
+  [data-zappy-zoom-wrapper] {
+    max-width: 100% !important;
+  }
+}
+
+/* ========== HERO SECTION WIDTH CONSTRAINT (ALL VIEWPORTS) ========== */
+/* Prevent hero sections from exceeding viewport width.                */
+/* Root cause: AI-generated CSS may use width:100vw or add horizontal  */
+/* padding to the section, causing it to overflow the viewport.        */
+/* NOTE: Do NOT add overflow:hidden here — it clips SVG bottom dividers */
+/* that need overflow:visible to extend into the next section.          */
+section[class*="hero" i],
+section[class*="Hero"],
+section[data-hero-type] {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ========== SVG DIVIDER OVERLAY FIX ========== */
+/* Many AI sections place .section-divider absolutely at the bottom of a section,
+   which can overlap/cut off the last row of content. The safest CSS-only fix
+   is to prevent overlay by forcing the divider into normal flow. */
+.section-divider {
+  position: relative !important;
+  bottom: auto !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: auto !important;
+  margin-top: 16px !important;
+}
+
+.section-divider svg {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Exclude small icon SVGs from full-width sizing - these are decorative icons, not wave dividers */
+.section-divider svg.divider-icon,
+.section-divider svg[width="32"],
+.section-divider svg[width="24"],
+.section-divider svg[width="48"],
+.section-divider svg[viewBox="0 0 32 32"],
+.section-divider svg[viewBox="0 0 24 24"],
+.section-divider svg[viewBox="0 0 48 48"] {
+  width: auto !important;
+  height: auto !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
+}
+
+/* ========== END SVG DIVIDER OVERLAY FIX ========== */
+
+/* ========== HORIZONTAL-PAIR GRID MEDIA FIX ========== */
+/* Ensures media in horizontal-pair grids fills columns correctly */
+
+/* Image/video media cells: stretch to fill the grid cell */
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"]:not([data-element-type="icon"]) {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  min-height: 0 !important;
+}
+
+/* Icon media cells: use flex for centering but allow alignment to be controlled by the editor */
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"][data-element-type="icon"] {
+  position: relative !important;
+  display: flex !important;
+  min-height: 0 !important;
+}
+
+/* Images/videos: preserve aspect ratio while filling column width */
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > img,
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > video {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  display: block !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Icons/SVG: respect their explicit pixel size from the editor */
+/* Do NOT force width/height: 100% - icons should use their inline size */
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > svg,
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > .iconify,
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > .iconify svg {
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  display: inline-block !important;
+}
+
+/* Non-media grid items (buttons, text, etc.) should NOT stretch */
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] > .zappy-inserted-element:not([data-zappy-media-cell]) {
+  align-self: start !important;
+  height: auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+/* Buttons inside non-media grid items should NOT stretch horizontally */
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] > .zappy-inserted-element:not([data-zappy-media-cell]) .btn,
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] > .zappy-inserted-element:not([data-zappy-media-cell]) [data-element-type="button"] {
+  width: auto !important;
+  flex: 0 0 auto !important;
+}
+
+/* ========== END HORIZONTAL-PAIR GRID MEDIA FIX ========== */
+
+/* ========== END GRID RESPONSIVE FIX ========== */
 
 
 /* ZAPPY_SECTION_BG_TYPE_FIX */
